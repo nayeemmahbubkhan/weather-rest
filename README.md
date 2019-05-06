@@ -1,4 +1,4 @@
-# Weather app
+# Weather REST API
 
 The project is based on a small web service which uses the following technologies:
 
@@ -29,8 +29,9 @@ You should be able to start the example application by executing de.creatision.w
 - docker build -f DockerFile -t weather .
 - docker run -p 8081:8081 weather
 
-# Dependencies
-this api depends on OpenWeather(https://openweathermap.org/), OpenWeather API requires a secret key to access their service
+# Third party API dependencies
+ - OpenWeather(https://openweathermap.org/) for weather info, OpenWeather API requires a secret key to access their service.
+ - RestCountries(https://restcountries.eu/) for getting country code.
 
 # ToDo
  - email address verification
