@@ -1,6 +1,6 @@
 package de.creatision.weather.mapper;
 
-import de.creatision.weather.datatransferobject.UserRegistrationRequest;
+import de.creatision.weather.datatransferobject.UserSignUpRequest;
 import de.creatision.weather.datatransferobject.UserResponse;
 import de.creatision.weather.domainobject.User;
 
@@ -15,7 +15,7 @@ public class UserMapper {
 				.build();
 	}
 
-	public static User makeUser(UserRegistrationRequest userRequest) {
+	public static User makeUser(UserSignUpRequest userRequest) {
 		return User.builder()
 				.firstName(userRequest.getFirstName())
 				.lastName(userRequest.getLastName())

@@ -11,7 +11,6 @@ public class WeatherMapper {
 	public static WeatherResponse makeWeatherResponse(CurrentWeather currentWeather) {
 		return WeatherResponse.builder()
 				.temperature(currentWeather.getMainParameters().getTemperature())
-				.postalCode("")
 				.city(currentWeather.getCityName())
 				.unit(CELSIUS.getCode())
 				.build();

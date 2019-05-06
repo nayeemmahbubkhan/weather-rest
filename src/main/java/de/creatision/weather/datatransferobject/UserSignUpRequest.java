@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class UserRegistrationRequest {
+public class UserSignUpRequest {
 	
     private String firstName;
     private String lastName;

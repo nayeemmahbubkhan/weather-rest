@@ -9,8 +9,6 @@ public class WeatherResponse {
 	
 	private double temperature;
 	private String unit;
-	private String postalCode;
 	private String city;
-	private String country;
 	
 }

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import de.creatision.weather.datatransferobject.UserLoginRequest;
-import de.creatision.weather.datatransferobject.UserRegistrationRequest;
+import de.creatision.weather.datatransferobject.UserSignUpRequest;
 import de.creatision.weather.datatransferobject.UserResponse;
 import de.creatision.weather.domainobject.User;
 import de.creatision.weather.exception.ConstraintsViolationException;
@@ -41,7 +41,7 @@ public class UserController {
 
 	@PostMapping("/signup")
 	@ResponseStatus(HttpStatus.CREATED)
-	public UserResponse signUp(@RequestBody UserRegistrationRequest userRequest, HttpServletResponse response)
+	public UserResponse signUp(@RequestBody UserSignUpRequest userRequest, HttpServletResponse response)
 			throws ConstraintsViolationException, UserAlreadyExistException {
 
 		User userDO = makeUser(userRequest);
@@ -60,7 +60,7 @@ public class UserController {
 		UserResponse user = makeUserResponse(userService.login(userRequest.getUsername(), userRequest.getPassword()));
 		String accessToken = securityService.encodeIntoJwt(Long.toString(user.getId()));
 		response.setHeader("access-token", accessToken);
-
+        
 		return user;
 	}
 
