@@ -26,8 +26,8 @@ You should be able to start the example application by executing de.creatision.w
 - mvn spring-boot:run
 
 ### container command
-- mvn clean package
-- mvn spring-boot:run
+- docker build -f DockerFile -t weather .
+- docker run -p 8081:8081 weather
 
 # Dependencies
 this api depends on OpenWeather(https://openweathermap.org/), OpenWeather API requires a secret key to access their service

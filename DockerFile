@@ -1,0 +1,9 @@
+FROM maven:3.5-jdk-8-alpine as BUILD
+COPY . /tmp/
+WORKDIR /tmp/
+RUN mvn package
+
+FROM openjdk:8-jre-alpine
+COPY --from=BUILD /tmp/target/weather-0.0.1.jar weather-0.0.1.jar
+# The application's jar file
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar", "/weather-0.0.1.jar"]
