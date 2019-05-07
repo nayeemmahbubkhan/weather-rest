@@ -67,8 +67,8 @@ public class OpenWeatherClientImpl implements OpenWeatherClient {
 
 	private CurrentWeatherOneLocationQuery getQueryBuilderForPostalCode(String postalCode, String countryCode) {
 
-		return QueryBuilderPicker.pick().currentWeather().oneLocation().byCityName(postalCode).countryCode(countryCode)
-				.type(Type.ACCURATE).language(Language.ENGLISH).responseFormat(ResponseFormat.JSON)
+		return QueryBuilderPicker.pick().currentWeather().oneLocation().byZipCode(postalCode, countryCode)
+				.language(Language.ENGLISH).responseFormat(ResponseFormat.JSON)
 				.unitFormat(UnitFormat.METRIC).build();
 	}
 }
