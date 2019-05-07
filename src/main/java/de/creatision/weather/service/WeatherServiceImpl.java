@@ -30,9 +30,11 @@ public class WeatherServiceImpl implements WeatherService {
 	}
 
 	@Override
-	public CurrentWeather getWeather(String cityName, String postalCode, String countryCode, Long userId)
+	public CurrentWeather getWeather(String cityName, String postalCode, String countryName, Long userId)
 			throws EntityNotFoundException, InvalidLocationException {
 
+		String countryCode = restCountriesClient.getCountryCode(countryName);
+		
 		if (cityName == null & postalCode == null) {
 			User user = UserService.findUser(userId);
 			cityName = user.getCity();

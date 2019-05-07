@@ -7,7 +7,7 @@ import de.creatision.weather.exception.InvalidLocationException;
 
 public interface WeatherService {
 
-	CurrentWeather getWeather(String cityName, String postalCode, String countryCode, Long userId)
+	CurrentWeather getWeather(String cityName, String postalCode, String countryName, Long userId)
 			throws EntityNotFoundException, InvalidLocationException;
 
 }

@@ -34,8 +34,9 @@ You should be able to start the example application by executing de.creatision.w
  - RestCountries(https://restcountries.eu/) for getting country code.
 
 # ToDo
- - email address verification
+ - email address validation and verification
  - city/country validation
+ - logout/JWT invalidate implementation
 
  
  

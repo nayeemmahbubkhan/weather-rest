@@ -32,11 +32,11 @@ public class WeatherController {
 
 	@GetMapping
 	public WeatherResponse getWeather(@RequestHeader String accessToken, @RequestParam(required = false) String cityName,
-			@RequestParam(required = false) String postalCode, @RequestParam(defaultValue = "DE") String countryCode)
+			@RequestParam(required = false) String postalCode, @RequestParam(defaultValue = "Germany") String countryName)
 			throws InvalidLocationException, NumberFormatException, SecurityException, DataFormatException,
 			InvalidAccessTokenException, EntityNotFoundException {
 		Long userId = Long.parseLong(securityService.decodeAndVerifyJwt(accessToken));
-		return makeWeatherResponse(weatherService.getWeather(cityName, postalCode, countryCode, userId));
+		return makeWeatherResponse(weatherService.getWeather(cityName, postalCode, countryName, userId));
 	}
 
 }
