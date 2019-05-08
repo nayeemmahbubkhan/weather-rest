@@ -37,6 +37,7 @@ You should be able to start the example application by executing de.creatision.w
  - email address validation and verification
  - city/country validation
  - logout/JWT invalidate implementation
+ - test cases for services and repo
 
  
  

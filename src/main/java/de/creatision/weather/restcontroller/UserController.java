@@ -47,7 +47,7 @@ public class UserController {
 		User userDO = makeUser(userRequest);
 		UserResponse user = makeUserResponse(userService.signUp(userDO));
 		String accessToken = securityService.encodeIntoJwt(Long.toString(user.getId()));
-		response.setHeader("access-token", accessToken);
+		//response.setHeader("access-token", accessToken);
         //FIXME: fix on react FE, so that it can read from response header
 		user.setAccessToken(accessToken);
 		return user;
@@ -60,7 +60,7 @@ public class UserController {
 
 		UserResponse user = makeUserResponse(userService.login(userRequest.getUsername(), userRequest.getPassword()));
 		String accessToken = securityService.encodeIntoJwt(Long.toString(user.getId()));
-		response.setHeader("access-token", accessToken);
+		//response.setHeader("access-token", accessToken);
 	    //FIXME: fix on react FE, so that it can read from response header
 		user.setAccessToken(accessToken);
         
