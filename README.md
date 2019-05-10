@@ -18,7 +18,7 @@ this project follows conventions as below:
    * DomainObjects: Functional Objects which might be persisted in the database.
 
 ## How to run
-###from IDE
+### IDE
 You should be able to start the example application by executing de.creatision.weather.WeatherApplication, which starts a webserver on port 8080 (http://localhost:8080) and serves SwaggerUI where you can inspect and try existing end-points.
 
 ### maven command 
