@@ -21,7 +21,7 @@ import com.auth0.jwt.interfaces.DecodedJWT;
 import de.weather.exception.InvalidAccessTokenException;
 
 @Service
-// TODO: @Singleton 
+//TODO: @Singleton 
 public class JWTServiceImpl implements JWTService {
 	
   private static final Logger LOG = LoggerFactory.getLogger(JWTServiceImpl.class);

@@ -9,8 +9,6 @@ import org.openweathermap.api.query.ResponseFormat;
 import org.openweathermap.api.query.Type;
 import org.openweathermap.api.query.UnitFormat;
 import org.openweathermap.api.query.currentweather.CurrentWeatherOneLocationQuery;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cache.annotation.Cacheable;
@@ -18,11 +16,12 @@ import org.springframework.stereotype.Service;
 
 import de.weather.exception.InvalidLocationException;
 import de.weather.service.UserService;
+import lombok.extern.slf4j.Slf4j;
 
 @Service
+@Slf4j
 public class OpenWeatherClientImpl implements OpenWeatherClient {
 
-	private static final Logger LOG = LoggerFactory.getLogger(OpenWeatherClientImpl.class);
 	private String openweatherApiKey;
 	
 	@Autowired
@@ -42,17 +41,18 @@ public class OpenWeatherClientImpl implements OpenWeatherClient {
 				? getQueryBuilderForCity(cityName, countryCode)
 				: getQueryBuilderForPostalCode(postalCode, countryCode);
 
-		LOG.info("fetching weather info from openweather api for city: " + cityName + " with country code: "
+		log.info("fetching weather info from openweather api for city: " + cityName + " with country code: "
 				+ countryCode);
 		CurrentWeather currentWeather = null;
-		// TODO: improve exception handling
+		//TODO: improve exception handling
 		try {
 			currentWeather = client.getCurrentWeather(currentWeatherOneLocationQuery);
 		} catch (Exception e) {
-			LOG.error(e.getMessage());
+			log.error(e.getMessage());
 			throw new InvalidLocationException("incorrect location");
 		}
-		LOG.info("successfull fetched temperature: " + currentWeather.getMainParameters().getTemperature() + " for "
+		
+		log.info("fetched temperature successfull: " + currentWeather.getMainParameters().getTemperature() + " for "
 				+ currentWeather.getCityName() + ", " + currentWeather.getSystemParameters().getCountry());
 
 		return currentWeather;

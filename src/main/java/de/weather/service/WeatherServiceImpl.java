@@ -12,11 +12,13 @@ import de.weather.exception.InvalidLocationException;
 import de.weather.service.openweather.OpenWeatherClient;
 import de.weather.service.openweather.OpenWeatherClientImpl;
 import de.weather.service.restcountries.RestCountriesClient;
+import lombok.extern.slf4j.Slf4j;
 
 @Service
+@Slf4j
 public class WeatherServiceImpl implements WeatherService {
 
-	private static final Logger LOG = LoggerFactory.getLogger(OpenWeatherClientImpl.class);
+	//private static final Logger LOG = LoggerFactory.getLogger(OpenWeatherClientImpl.class);
 	private UserService UserService;
 	private OpenWeatherClient openWeatherClient;
 	private RestCountriesClient restCountriesClient;
