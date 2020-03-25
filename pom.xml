@@ -10,11 +10,11 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	
-	<groupId>de.creatision</groupId>
-	<artifactId>weather</artifactId>
-	<version>0.0.1</version>
+	<groupId>de.weather</groupId>
+	<artifactId>REST</artifactId>
+	<version>0.0.2</version>
 	<name>weather</name>
-	<description>Weather rest api for creatision GmbH</description>
+	<description>Weather REST API</description>
 
 	<properties>
 		<java.version>1.8</java.version>
