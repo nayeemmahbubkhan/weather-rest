@@ -16,7 +16,6 @@ import org.springframework.web.context.WebApplicationContext;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import de.weather.datatransferobject.UserSignUpRequest;
-import de.weather.restcontroller.UserController;
 import de.weather.service.UserService;
 import de.weather.service.WeatherService;
 import de.weather.service.security.JWTService;
