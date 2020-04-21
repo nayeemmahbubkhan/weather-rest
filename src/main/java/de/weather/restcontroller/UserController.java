@@ -4,6 +4,7 @@ import static de.weather.mapper.UserMapper.makeUser;
 import static de.weather.mapper.UserMapper.makeUserResponse;
 
 import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,7 +21,8 @@ import de.weather.exception.ConstraintsViolationException;
 import de.weather.exception.InvalidCredentialException;
 import de.weather.exception.UserAlreadyExistException;
 import de.weather.service.UserService;
-import de.weather.service.security.JWTService;;
+import de.weather.service.security.JWTService;
+
 
 /**
  * All operations with a user plan will be routed by this controller.
