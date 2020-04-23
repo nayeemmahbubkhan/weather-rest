@@ -33,11 +33,9 @@ You should be able to start the example application by executing de.creatision.w
  - OpenWeather(https://openweathermap.org/) for weather info, OpenWeather API requires a secret key to access their service.
  - RestCountries(https://restcountries.eu/) for getting country code.
 
-# ToDo
- - email address validation and verification
- - city/country validation
+# caveat
+ - email address verification
  - logout/JWT invalidate implementation
- - test cases for services and repo
 
  
  

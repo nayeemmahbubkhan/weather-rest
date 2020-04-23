@@ -1,5 +1,6 @@
 package de.weather.datatransferobject;
 
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -19,6 +20,7 @@ public class UserSignUpRequest {
     private String firstName;
     private String lastName;
     @NotNull
+    @Email
     private String emailAddress;
     @NotNull
     private String username;

@@ -26,6 +26,4 @@ public class UserResponse {
     @NotNull
     private String username;
     private ZonedDateTime createdAt;
-    private String accessToken;
-
 }

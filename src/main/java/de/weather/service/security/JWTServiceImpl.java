@@ -33,10 +33,10 @@ public class JWTServiceImpl implements JWTService {
   @Autowired
   public JWTServiceImpl(@Value("${jwt.issuer}") String jwtIssuer,
       @Value("${jwt.signature.secret}") String signatureSecret,
-      @Value("${jwt.valid.days}") String jwtValidTimeInDays) {
+      @Value("${jwt.valid.minutes}") String jwtValidTimeInMinutes) {
     this.jwtIssuer = jwtIssuer;
     this.signatureSecret = signatureSecret;
-    this.jwtValidTimeInDays = Long.parseLong(jwtValidTimeInDays);
+    this.jwtValidTimeInDays = Long.parseLong(jwtValidTimeInMinutes);
   }
 
   @Override
@@ -44,7 +44,7 @@ public class JWTServiceImpl implements JWTService {
     
     try {
       return JWT.create().withIssuer(jwtIssuer)
-          .withExpiresAt(Date.from(Instant.now().plus(jwtValidTimeInDays, ChronoUnit.DAYS)))
+          .withExpiresAt(Date.from(Instant.now().plus(jwtValidTimeInDays, ChronoUnit.MINUTES)))
           .withClaim(USER_ID, userId)
           .sign(Algorithm.HMAC256(signatureSecret));
     } catch (UnsupportedEncodingException e) {
