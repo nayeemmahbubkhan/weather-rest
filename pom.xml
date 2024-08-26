@@ -19,7 +19,7 @@
 	<properties>
 		<java.version>1.8</java.version>
 		<openweather.api.version>1.2.3</openweather.api.version>
-		<io.springfox.version>2.8.0</io.springfox.version>
+		<io.springfox.version>2.10.0</io.springfox.version>
 		<java.jwt.version>3.1.0</java.jwt.version>
 	</properties>
 
